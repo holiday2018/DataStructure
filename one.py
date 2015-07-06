@@ -10,22 +10,3 @@
     5.算法的五个特性：有穷性 确定性 可行性 输入 输出
     6.算法设计的要求：正确性 可读性 健壮性 效率与低存储量需求 
     7.任何一个算法的设计取决于选定的数据（逻辑）结构，而算法的实现依赖于采用的存储结构
-    8.归并算法：
-        void MergeList(List La, List Lb, List &Lc){
-        //已知线性表La和Lb中的元素按值非递减排列。
-        //归并La和Lb得到新的额线性表Lc，Lc中的数据元素也按值非递减排列
-        InitList(Lc);
-        i = j = 1; k = 0;
-        La_len = ListLength(La); Lb_len = ListLength(Lb);
-        while((i <= La_len) && (j < Lb_len)){
-            GetElem(La, i, ai); GetElem(Lb, j, bj);
-            if(ai <= bj) {ListInsert(Lc, ++k, ai); ++i;}
-            else {ListInsert(Lc, ++k, bj); ++j;}
-            }
-        while (i < La_len){
-            GetElem(La, i++, ai); ListInsert(Lc, ++k, ai);
-            }
-        while (j < Lb_len) {
-            GetElem(Lb, j++, bj); ListInsert(Lc, ++k, bj);
-            }
-        }// MergeList
